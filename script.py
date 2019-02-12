@@ -12,7 +12,9 @@ for file in os.listdir("."):
         print(os.path.join("/mydir", file))
 	bag_file.append(os.path.join(file))
 
-image_topic = "/camera/image_color"
+#image_topic = "/camera/image_color"
+#image_topic = "/camera/image_raw"
+image_topic = "/darknet_ros/detection_image"
 
 
 extract_obj = Extractor(bag_file,image_topic)

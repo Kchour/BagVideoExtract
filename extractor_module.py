@@ -77,7 +77,8 @@ class Extractor(object):
  	def save(self,output_dir,name):
 		"""subprocess is not blocking!!!, so ensure it: Popen object has a .wait() method"""
 		#image_dir = os.path.abspath(output_dir)
-		cmds = ['ffmpeg', '-r', '1', '-i', output_dir+'frame%06d.png', "-filter", "minterpolate='fps=30'", '-vcodec', 'mpeg4', '-y', name+".mp4"]
+		#cmds = ['ffmpeg', '-r', '25', '-i', output_dir+'frame%06d.png', "-filter", "minterpolate='fps=25'", '-vcodec', 'mpeg4', '-y', name+".mp4"]
+		cmds = ['ffmpeg', '-r', '15', '-i', output_dir+'frame%06d.png', '-vcodec', 'mpeg4', '-y', name+".mp4"]
 		proc = subprocess.Popen(cmds)
 		proc.wait()
 
